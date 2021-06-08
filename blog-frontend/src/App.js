@@ -8,7 +8,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/articulo/:id">
+        <Route path="/articulo/:slug">
           <Article />
         </Route>
         <Route path="/">

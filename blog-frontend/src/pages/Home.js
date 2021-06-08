@@ -40,7 +40,7 @@ const callToApi = async (setArticlesData) => {
 
   setArticlesData(
     data.map((article) => ({
-      id: article.id,
+      slug: article.slug,
       imgSrc: "http://localhost:3000" + article.image?.formats.thumbnail.url,
       title: article.title,
       description: article.description,

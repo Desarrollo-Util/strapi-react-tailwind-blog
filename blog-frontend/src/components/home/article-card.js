@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ArticleCard = ({ id, imgSrc, title, description, date }) => (
-  <Link to={`/articulo/${id}`} className="w-3/12 p-4">
+const ArticleCard = ({ slug, imgSrc, title, description, date }) => (
+  <Link to={`/articulo/${slug}`} className="w-3/12 p-4">
     <div className="bg-white rounded-md overflow-hidden shadow-md">
       <div
         className="flex justify-center items-center h-40 w-full overflow-hidden bg-cover"
