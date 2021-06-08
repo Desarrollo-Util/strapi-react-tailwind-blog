@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ArticleCard = ({ imgSrc, title, description, date }) => (
-  <div className="w-3/12 p-4">
+const ArticleCard = ({ id, imgSrc, title, description, date }) => (
+  <Link to={`/articulo/${id}`} className="w-3/12 p-4">
     <div className="bg-white rounded-md overflow-hidden shadow-md">
       <div
         className="flex justify-center items-center h-40 w-full overflow-hidden bg-cover"
@@ -17,7 +18,7 @@ const ArticleCard = ({ imgSrc, title, description, date }) => (
         </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 export default ArticleCard;

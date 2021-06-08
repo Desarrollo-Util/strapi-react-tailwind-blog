@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     callToApi(setArticlesData);
-  }, []); // [] Indica que sólo se va a realizar cuando se monte el componente!!w
+  }, []); // [] Indica que sólo se va a realizar cuando se monte el componente!!
 
   return (
     <section className="container mx-auto">
@@ -40,6 +40,7 @@ const callToApi = async (setArticlesData) => {
 
   setArticlesData(
     data.map((article) => ({
+      id: article.id,
       imgSrc: "http://localhost:3000" + article.image?.formats.thumbnail.url,
       title: article.title,
       description: article.description,
