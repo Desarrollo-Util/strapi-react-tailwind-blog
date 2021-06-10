@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "articles",
   "info": {
-    "name": "article"
+    "name": "article",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -52,11 +54,18 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "author": {
       "via": "articles",
       "model": "writer"
+    },
+    "Contenido": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.contenido"
+      ]
     }
   }
 }

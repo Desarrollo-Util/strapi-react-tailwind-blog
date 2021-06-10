@@ -27,7 +27,7 @@ const Home = () => {
             else return articleData.title.toLowerCase().includes(search);
           })
           .map((articleData) => (
-            <ArticleCard {...articleData} />
+            <ArticleCard key={articleData.slug} {...articleData} />
           ))}
       </div>
     </section>
@@ -35,13 +35,13 @@ const Home = () => {
 };
 
 const callToApi = async (setArticlesData) => {
-  const response = await fetch("http://localhost:3000/articles");
+  const response = await fetch(`${process.env.BACKEND_HOST}/articles`);
   const data = await response.json();
 
   setArticlesData(
     data.map((article) => ({
       slug: article.slug,
-      imgSrc: "http://localhost:3000" + article.image?.formats.thumbnail.url,
+      imgSrc: `${process.env.BACKEND_HOST}${article.image?.formats.thumbnail.url}`,
       title: article.title,
       description: article.description,
       date: new Date(article.publishedAt).toLocaleDateString(),
