@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ArticleCard from "../components/home/article-card";
+import AuthContext from "../lib/contexts/auth.context";
 
 const Home = () => {
+  const { authState } = useContext(AuthContext);
+
   const [articlesData, setArticlesData] = useState([]);
   const [search, setSearch] = useState("");
 
