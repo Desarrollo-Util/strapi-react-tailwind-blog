@@ -1,5 +1,3 @@
-// @ts-check
-
 import React, { useEffect, useState } from "react";
 import ArticleCard from "../components/home/article-card";
 
@@ -41,7 +39,7 @@ const callToApi = async (setArticlesData) => {
   setArticlesData(
     data.map((article) => ({
       slug: article.slug,
-      imgSrc: `${process.env.BACKEND_HOST}${article.image?.formats.thumbnail.url}`,
+      imgSrc: `${process.env.BACKEND_HOST}${article.cardImage?.formats.thumbnail.url}`,
       title: article.title,
       description: article.description,
       date: new Date(article.publishedAt).toLocaleDateString(),

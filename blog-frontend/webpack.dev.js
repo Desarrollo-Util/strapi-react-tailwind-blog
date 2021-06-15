@@ -9,7 +9,7 @@ module.exports = {
     contentBase: resolve(__dirname, "build"),
     publicPath: "/",
     historyApiFallback: true,
-    host: "localhost",
+    host: "0.0.0.0",
     open: true,
     port: 3001,
     hot: true,

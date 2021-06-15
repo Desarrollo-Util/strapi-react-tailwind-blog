@@ -23,7 +23,7 @@ const Article = () => {
           className="w-full h-96 bg-cover bg-center"
         />
         <div className="container mx-auto py-4">
-          <h1 className="text-center font-bold text-4xl pb-2">
+          <h1 className="text-center font-bold text-3xl pb-2">
             {articleData.title}
           </h1>
           <div className="px-12">
