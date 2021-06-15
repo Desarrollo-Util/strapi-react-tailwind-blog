@@ -9,13 +9,23 @@
   -webkit-box-orient: vertical;
 }
 
-.truncate-2 {
+.truncate-3 {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  @apply text-gray-700;
+}
+
 p {
-  @apply py-4 text-lg;
+  @apply text-gray-500;
 }
