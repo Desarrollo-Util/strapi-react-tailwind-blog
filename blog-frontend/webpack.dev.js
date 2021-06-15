@@ -11,7 +11,7 @@ module.exports = {
     historyApiFallback: true,
     host: "localhost",
     open: true,
-    port: 3013,
+    port: 3001,
     hot: true,
   },
   entry: resolve(__dirname, "./src/index.js"),

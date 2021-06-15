@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_article_content_paragraphs",
+  "info": {
+    "name": "Paragraph",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "paragraph": {
+      "type": "richtext"
+    }
+  }
+}

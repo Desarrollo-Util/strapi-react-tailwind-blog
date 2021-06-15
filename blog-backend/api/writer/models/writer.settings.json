@@ -21,12 +21,12 @@
       "plugin": "upload",
       "required": false
     },
+    "email": {
+      "type": "string"
+    },
     "articles": {
       "via": "author",
       "collection": "article"
-    },
-    "email": {
-      "type": "string"
     }
   }
 }

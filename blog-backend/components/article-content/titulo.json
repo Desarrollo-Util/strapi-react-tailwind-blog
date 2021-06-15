@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_article_content_subtitles",
+  "info": {
+    "name": "Subtitle",
+    "icon": "grip-lines",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}
