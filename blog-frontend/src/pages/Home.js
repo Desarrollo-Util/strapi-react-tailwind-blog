@@ -37,7 +37,7 @@ const Home = () => {
 const callToApi = async (setArticlesData) => {
   const response = await fetch(`${process.env.BACKEND_HOST}/articles`);
   const data = await response.json();
-  console.log(data);
+
   setArticlesData(
     data.map((article) => ({
       slug: article.slug,

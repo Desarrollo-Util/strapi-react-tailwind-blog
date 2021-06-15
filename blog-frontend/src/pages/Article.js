@@ -12,13 +12,13 @@ const Article = () => {
   useEffect(() => {
     callToApi(slug, setArticleData);
   }, []);
-  console.log(articleData);
+
   if (articleData) {
     return (
-      <article className="w-screen">
+      <article className="container mx-auto lg:px-20 px-10 py-4">
         <div
           style={{
-            backgroundImage: `url(${process.env.BACKEND_HOST}${articleData.image.formats.large.url})`,
+            backgroundImage: `url(${process.env.BACKEND_HOST}${articleData.cardImage.formats.large.url})`,
           }}
           className="w-full h-96 bg-cover bg-center"
         />
