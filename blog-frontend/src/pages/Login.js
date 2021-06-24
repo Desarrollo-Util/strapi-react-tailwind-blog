@@ -40,7 +40,7 @@ const submitLoginForm = async (event, setAuthState, history) => {
 
   if (data.jwt) {
     localStorage.setItem("jwt", data.jwt);
-    setAuthState(data);
+    setAuthState({ jwt: data.jwt, user: { username: data.user.username } });
 
     history.push("/");
   }
