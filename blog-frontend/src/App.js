@@ -9,7 +9,6 @@ import "./styles/index.css";
 
 const App = () => {
   const [authState, setAuthState] = useState(undefined);
-  console.log(authState);
 
   useEffect(() => {
     if (localStorage.getItem("jwt")) recoverUser(setAuthState);

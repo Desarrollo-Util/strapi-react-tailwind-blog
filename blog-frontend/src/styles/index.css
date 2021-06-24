@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "../../node_modules/video.js/dist/video-js.min.css";
 
 .truncate-1 {
   overflow: hidden;

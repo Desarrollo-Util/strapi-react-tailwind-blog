@@ -1,17 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import parse from "remark-parse";
 import remark2react from "remark-react";
 import unified from "unified";
+import videojs from "video.js";
 
 const Article = () => {
   const { slug } = useParams();
 
   const [articleData, setArticleData] = useState();
+  const videoRef = useRef();
+  const playerRef = useRef();
 
   useEffect(() => {
     callToApi(slug, setArticleData);
+
+    return () => playerRef.current.dispose();
   }, []);
+
+  useEffect(() => {
+    if (videoRef.current && articleData) {
+      playerRef.current = videojs(
+        videoRef.current,
+        { controls: true, fluid: true },
+        () => {
+          playerRef.current.src(
+            process.env.BACKEND_HOST + articleData.video.url
+          );
+        }
+      );
+    }
+  }, [videoRef.current, articleData]);
 
   if (articleData) {
     return (
@@ -33,6 +52,9 @@ const Article = () => {
                 .use(remark2react)
                 .processSync(articleData.content).result
             }
+          </div>
+          <div data-vjs-player className="w-full">
+            <video ref={videoRef} className="video-js w-full" />
           </div>
         </div>
       </article>
