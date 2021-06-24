@@ -8,15 +8,11 @@ import Login from "./pages/Login";
 import "./styles/index.css";
 
 const App = () => {
-  const [authState, setAuthState] = useState(
-    localStorage.getItem("jwt")
-      ? { jwt: localStorage.getItem("jwt") }
-      : undefined
-  );
+  const [authState, setAuthState] = useState(undefined);
   console.log(authState);
 
   useEffect(() => {
-    if (authState && !authState.user) recoverUser(authState, setAuthState);
+    if (localStorage.getItem("jwt")) recoverUser(setAuthState);
   }, []);
 
   return (
@@ -39,18 +35,21 @@ const App = () => {
   );
 };
 
-const recoverUser = async (authState, setAuthState) => {
+const recoverUser = async (setAuthState) => {
   const response = await fetch(`${process.env.BACKEND_HOST}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${authState.jwt}`,
+      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
   });
 
   const data = await response.json();
 
-  setAuthState({ ...authState, user: { username: data.username } });
+  setAuthState({
+    jwt: localStorage.getItem("jwt"),
+    user: { username: data.username },
+  });
 };
 
 export default App;
