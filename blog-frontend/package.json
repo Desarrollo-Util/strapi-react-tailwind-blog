@@ -14,6 +14,7 @@
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@learnthis/tailwind-utils": "^0.1.5",
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",

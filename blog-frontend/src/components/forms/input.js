@@ -1,12 +1,6 @@
 import React from "react";
 
-const Input = ({
-  placeholder,
-  name,
-  type = "text",
-  className = "",
-  ...props
-}) => (
+const Input = ({ placeholder, type = "text", className = "", ...props }) => (
   <label
     className={`flex flex-col justify-items-start items-start ${className}`}
   >

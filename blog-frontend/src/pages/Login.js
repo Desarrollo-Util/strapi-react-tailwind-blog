@@ -16,7 +16,9 @@ const Login = () => {
       >
         <Input placeholder="Usuario" name="user" />
         <Input placeholder="Contraseña" name="password" type="password" />
-        <Button className="my-4">Login</Button>
+        <Button className="my-4" id="boton">
+          Login
+        </Button>
       </form>
     </section>
   );

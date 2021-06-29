@@ -34,7 +34,7 @@ const Article = () => {
 
   if (articleData) {
     return (
-      <article className="container mx-auto lg:px-20 px-10 py-4">
+      <article className="container mx-auto lg:px-20 px-10 py-4 py-">
         <div
           style={{
             backgroundImage: `url(${process.env.BACKEND_HOST}${articleData.cardImage.formats.large.url})`,

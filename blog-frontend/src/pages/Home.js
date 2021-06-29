@@ -13,16 +13,15 @@ const Home = () => {
   }, []); // [] Indica que sólo se va a realizar cuando se monte el componente!!
 
   return (
-    <section className="container mx-auto lg:px-20 px-10 py-4">
-      <h1 className="text-center text-5xl font-bold">Blog</h1>
-      <div className="p-4">
+    <section className="container-lg py-4">
+      <h1 className="text-center text-28 font-bold">Blog</h1>
+      <div className="p-1">
         <input
-          className="rounded-lg border border-gray-600 p-2"
+          className="rounded-lg border-1 border-gray-600 px-0_75 py-0_5"
           type="text"
           onChange={(event) => setSearch(event.target.value.toLowerCase())}
         />
       </div>
-
       <div className="flex flex-wrap">
         {articlesData
           .filter((articleData) => {
